@@ -15,6 +15,22 @@ This project involves analyzing retail order data to derive insights into sales 
 - **Data Loading**
   - Connected to SQL Server and loaded the processed data into the database.
 
+## Data Analysis
+The dataset includes various features such as order ID, city, ship mode, list price, discount percent, cost price, and order date.  
+Unique Ship Modes: `df['Ship Mode'].unique()`
+
+## Technologies Used
+- Python
+- Pandas
+- SQL Server
+- Kaggle API
+
+## License
+This project is licensed under the MIT License.
+
+## Contact
+For inquiries, please contact me at [aninditaraha902@gmail.com](mailto:aninditaraha902@gmail.com).
+
 ## Code Snippet
 ```python
 import kaggle
@@ -39,3 +55,4 @@ import sqlalchemy as sal
 engine = sal.create_engine('mssql://LAPTOP-6I8QJQUH\\SQLEXPRESS/master?driver=ODBC+DRIVER+17+FOR+SQL+SERVER')
 conn = engine.connect()
 df.to_sql('df_orders', con=conn, index=False, if_exists='append')
+
