@@ -25,7 +25,8 @@ zip_ref = zipfile.ZipFile('orders.csv.zip')
 zip_ref.extractall()
 import pandas as pd
 df = pd.read_csv('orders.csv', na_values=['Not Available', 'unknown'])
-# Process data...
+
+# Process data
 df.rename(columns={'Order Id': 'order_id', 'City': 'city'}, inplace=True)
 df.columns = df.columns.str.lower().str.replace(' ', '_')
 df['discount'] = df['list_price'] * df['discount_percent'] * 0.01
@@ -38,6 +39,3 @@ import sqlalchemy as sal
 engine = sal.create_engine('mssql://LAPTOP-6I8QJQUH\\SQLEXPRESS/master?driver=ODBC+DRIVER+17+FOR+SQL+SERVER')
 conn = engine.connect()
 df.to_sql('df_orders', con=conn, index=False, if_exists='append')
-
-
-
