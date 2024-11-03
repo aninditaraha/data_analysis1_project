@@ -25,12 +25,6 @@ Unique Ship Modes: `df['Ship Mode'].unique()`
 - SQL Server
 - Kaggle API
 
-## License
-This project is licensed under the MIT License.
-
-## Contact
-For inquiries, please contact me at [aninditaraha902@gmail.com](mailto:aninditaraha902@gmail.com).
-
 ## Code Snippet
 ```python
 import kaggle
